@@ -1,0 +1,75 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    int n,m,d1=0,d2=0,rowsum=0,r1,c1,colsum=0;
+//cout<<"Enter the size of square";
+cin>>n;
+cin>>m;
+//cout<<n<<" "<<m<<endl;
+int a[n][m];
+//cout<<"enter elements";
+ for(int i=1;i<=n;i++)
+ {
+ 	for(int j=1;j<=m;j++)
+ 	{
+ 		cin>>a[i][j];
+	 }
+}
+ //cout<<"your square matrix"<<endl;
+ /* for(int i=1;i<=n;i++)
+  {
+  	for(int j=1;j<=m;j++)
+  	{
+  		cout<<a[i][j]<<'\t';
+	  }
+	cout<<'\n';
+  }*/
+  if(n==m){
+  for(int i=1;i<=n;i++)
+  {
+  	for(int j=1;j<=m;j++)
+  	{
+  	 if(i==j)
+	   {
+	   	d1=d1+a[i][j];
+		}
+	  }
+  }
+  for(int i=1;i<=n;i++)
+  {
+  	rowsum=0;
+  	for(int j=1;j<=m;j++)
+  	{ 
+	   	rowsum=rowsum+a[i][j];		
+	  }
+	  if(d1!=rowsum){ 
+	  	break;
+	  }	  
+}
+	  for(int i=1;i<=n;i++)
+  {
+  	colsum=0;
+	  for(int j=1;j<=m;j++)
+  	{ 
+	   	colsum=colsum+a[j][i];	
+	  }
+	  if(d1!=colsum){
+	  	
+	  	break;
+	  }
+  }
+  //cout<<"D1 :"<<d1<<"rowsum :"<<rowsum<<"colsum :"<<colsum;
+  if(d1==rowsum&&d1==colsum){
+  	cout<<"\nITS A MAGIC!";
+  }
+  else{
+  	cout<<"\nNO MAGIC";
+  }
+}
+else{
+	cout<<"\n Not a magic";
+}
+  return 0;
+}
